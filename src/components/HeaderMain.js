@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Dialog} from '@headlessui/react'
 import { Bars3Icon, XMarkIcon,ArrowRightIcon,MapPinIcon,ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
-
+import Banner from './Banners'
 
 const navigation = [
   { 
@@ -43,8 +43,12 @@ export default function Example() {
   const [openDropdown, setOpenDropdown] = useState(null)
 
   return (
-    <div className="bg-white">
-      <header className="absolute inset-x-0 top-0 z-50">
+    <>
+    <div className="relative z-60"> 
+    <Banner />
+  </div>
+    <div className="bg-white " >
+      <header className="absolute inset-x-0 top-0 z-50 pt-12">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
@@ -82,7 +86,7 @@ export default function Example() {
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         <a href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
           <img
@@ -218,6 +222,7 @@ export default function Example() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
