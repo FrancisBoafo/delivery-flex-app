@@ -35,7 +35,7 @@ const restaurants = [
   },
   {
     name: 'China Town',
-    description: 'The best Chinese cuisine in town',
+    description: 'Chinese food, try it now',
     imageSrc: 'https://plus.unsplash.com/premium_photo-1669727914916-9d093297e1da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hpbmVzZSUyMGZyaWVkJTIwcmljZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
     imageAlt: 'Restaurant 2 image',
     href: '/restaurant2',
@@ -43,7 +43,7 @@ const restaurants = [
   },
   {
     name: 'Steak House',
-    description: 'Take a bite of the best steak in town',
+    description: 'Steak, made to perfection',
     imageSrc: 'https://images.unsplash.com/photo-1588690793273-4d86028401f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFN0ZWFrfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60',
     imageAlt: 'Restaurant 3 image',
     href: '/restaurant3',
@@ -73,14 +73,21 @@ export default function Example() {
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
-                <h3 className="mt-6 text-sm text-gray-500 text-left">
-                  <a href={restaurant.href}>
-                    <span className="absolute inset-0" />
-                    {restaurant.name}
-                  </a>
-                </h3>
-                <p className="text-base font-semibold text-gray-900 text-left">{restaurant.description}</p>
-                <p className="text-base text-gray-500 text-left">{restaurant.deliveryFee}</p>
+                <div className="mt-6 flex justify-between items-start">
+                  <div>
+                    <h3 className="text-sm text-gray-500 text-left">
+                      <a href={restaurant.href}>
+                        <span className="absolute inset-0" />
+                        {restaurant.name}
+                      </a>
+                    </h3>
+                    <p className="text-base font-semibold text-gray-900 text-left ">{restaurant.description}</p>
+                    <p className="text-base text-gray-500 text-left">{restaurant.deliveryFee}</p>
+                  </div>
+                  <Link to={restaurant.href} className="inline-flex items-center px-3 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                    Order Now → 
+                  </Link>
+              </div>
               </div>
             ))}
           </div>
@@ -89,7 +96,6 @@ export default function Example() {
     </div>
   )
 }
-
   
   
   
