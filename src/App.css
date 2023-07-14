@@ -43,16 +43,31 @@
   }
 }
 .animate-slide {
-  animation: slide-in 1s forwards;
+    animation: slide-in 1s forwards;
 }
 
 @keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes logo {
   0% {
-      transform: translateX(100%);
-      opacity: 0;
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateY(0px);
   }
+}
+
+.animate-logo {
+  animation: logo 2s ease-in-out infinite;
 }

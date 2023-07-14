@@ -43,7 +43,7 @@ const restaurants = [
   },
   {
     name: 'Steak House',
-    description: 'Steak, made to perfection',
+    description: 'Premium quality meat',
     imageSrc: 'https://images.unsplash.com/photo-1588690793273-4d86028401f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFN0ZWFrfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60',
     imageAlt: 'Restaurant 3 image',
     href: '/restaurant3',
@@ -63,17 +63,17 @@ export default function Example() {
               <span aria-hidden="true" className="ml-2">→</span>
             </Link>
           </div>
-          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:gap-x-6 lg:space-y-0">
+          <div className="mt-9 space-y-0 grid grid-cols-3 gap-x-6 gap-y-12">
             {restaurants.map((restaurant, index) => (
-              <div key={restaurant.name} className={`group relative ${index < 3 ? 'mb-8' : ''}`}>
-                <div className="relative w-full aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-white group-hover:opacity-75">
+              <div key={restaurant.name} className="group relative flex flex-col">
+                <div className="relative w-full h-auto overflow-hidden rounded-lg bg-white group-hover:opacity-75">
                   <img
                     src={restaurant.imageSrc}
                     alt={restaurant.imageAlt}
-                    className="h-full w-full object-cover object-center"
+                    className="w-full h-auto object-contain object-center"
                   />
                 </div>
-                <div className="mt-6 flex justify-between items-start">
+                <div className="mt-6 flex flex-col justify-between items-start">
                   <div>
                     <h3 className="text-sm text-gray-500 text-left">
                       <a href={restaurant.href}>
@@ -81,12 +81,18 @@ export default function Example() {
                         {restaurant.name}
                       </a>
                     </h3>
-                    <p className="text-base font-semibold text-gray-900 text-left ">{restaurant.description}</p>
+                    <p className=" sm:text-base text-sm sm:text-sm md:text-base font-semibold text-gray-900 text-left ">{restaurant.description}</p>
+
+
                     <p className="text-base text-gray-500 text-left">{restaurant.deliveryFee}</p>
                   </div>
-                  <Link to={restaurant.href} className="inline-flex items-center px-3 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-                    Order Now → 
-                  </Link>
+                 <Link 
+  to={restaurant.href} 
+  className="mt-4 inline-flex items-center px-3 py-2 text-sm md:px-3 md:py-2 md:text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+>
+  Order Now → 
+</Link>
+
               </div>
               </div>
             ))}
@@ -96,6 +102,9 @@ export default function Example() {
     </div>
   )
 }
+
+
+
   
   
   
