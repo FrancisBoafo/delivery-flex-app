@@ -54,7 +54,6 @@ export default function Example() {
             </li>
           ))}
         </ul>
-        <div className="mx-auto max-w-2xl h-px border-t border-gray-200"></div>
       </div>
     </div>
   )

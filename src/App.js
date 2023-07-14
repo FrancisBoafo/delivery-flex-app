@@ -9,6 +9,9 @@ import Signin from './components/Sign-in-and-Registration.js'
 import Blog from './components/Blog-Sections.js'
 import Error404 from './components/404-Pages'
 import Promo from './components/Promo-Sections.js'
+import Category from './components/Category-Previews'
+import TrustedPartners from './components/Trusted-Partners.js'
+import BecomeAPartner from './components/Become-Partner-Application.js'
 
 function App() {
   return (
@@ -16,13 +19,16 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/signin" element={<Signin />} />
+          <Route path="/partnerApplicaction" element={<BecomeAPartner />} />
           <Route path="/" element={
             <>
               <Header />
+              <Category />
               <Promo />
               <Feature />
               <Team />
               <Blog />
+              <TrustedPartners />
               <Newsletter />
             </>
           }/>

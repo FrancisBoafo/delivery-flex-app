@@ -1,6 +1,16 @@
-import { XMarkIcon } from '@heroicons/react/20/solid'
+import React, { useState } from 'react';
+import { XMarkIcon } from '@heroicons/react/20/solid';
 
 export default function Example() {
+  const [isOpen, setIsOpen] = useState(true); // isOpen state
+
+  if (!isOpen) {
+    return null;
+  }
+
+  const handleDismiss = () => {
+    setIsOpen(false); // on click, we set isOpen to false
+  }
   return (
     <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
       <div
@@ -33,7 +43,8 @@ export default function Example() {
           <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
             <circle cx={1} cy={1} r={1} />
           </svg>
-          Delivery to your door in 1 hour or less for $5.99    
+          Delivery in 30 minutes
+
         </p>
         <a
           href="/"
@@ -43,7 +54,7 @@ export default function Example() {
         </a>
       </div>
       <div className="flex flex-1 justify-end">
-        <button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+        <button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]" onClick={handleDismiss}>
           <span className="sr-only">Dismiss</span>
           <XMarkIcon className="h-5 w-5 text-gray-900" aria-hidden="true" />
         </button>
