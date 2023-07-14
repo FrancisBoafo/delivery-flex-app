@@ -3,13 +3,31 @@ const people = [
     name: 'Rama Osei Boafo',
     role: 'Co-Founder / CEO',
     imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    'https://plus.unsplash.com/premium_photo-1688739352540-a75b102d8551?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60',
   },
   {
     name: 'Francis Osei Boafo',
-    role: 'Co-Founder / CEO',
+    role: 'Co-Founder / CTO',
     imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      'https://media.istockphoto.com/id/1348671636/photo/young-businessman-smiling-while-standing-in-a-modern-office.webp?s=170667a&w=0&k=20&c=g6cWEIYDQ7pKjnvyB4o3qoKWTeBTRWREgmLNHWeTYvQ=',
+  },
+  {
+    name: 'Jane Doe',
+    role: 'Head of Marketing',
+    imageUrl:
+      'https://images.unsplash.com/photo-1503467913725-8484b65b0715?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'John Smith',
+    role: 'Head of Sales',
+    imageUrl:
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Emily Johnson',
+    role: 'Lead Developer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
 ]
 
@@ -27,7 +45,7 @@ export default function Example() {
           {people.map((person) => (
             <li key={person.name}>
               <div className="flex items-center gap-x-6">
-                <img className="h-16 w-16 rounded-full" src={person.imageUrl} alt="" />
+              <img className="h-16 w-16 rounded-full object-cover" src={person.imageUrl} alt="" />
                 <div>
                   <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
                   <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>
@@ -36,8 +54,10 @@ export default function Example() {
             </li>
           ))}
         </ul>
+        <div className="mx-auto max-w-2xl h-px border-t border-gray-200"></div>
       </div>
     </div>
   )
 }
+
 
