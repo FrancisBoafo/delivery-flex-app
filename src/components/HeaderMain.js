@@ -42,6 +42,7 @@ export default function Example() {
 
   return (
     <>
+    
       <div className="relative z-60"> 
         <Banner />
       </div>
