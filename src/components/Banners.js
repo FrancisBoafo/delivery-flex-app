@@ -38,13 +38,12 @@ export default function Example() {
         />
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <p className="text-sm leading-6 text-gray-900">
+        <p className="text-sm leading-6 text-gray-900 whitespace-nowrap">
           <strong className="font-semibold">DeliveryFlex</strong>
           <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
             <circle cx={1} cy={1} r={1} />
           </svg>
           Delivery in 30 minutes
-
         </p>
         <a
           href="/"
@@ -62,4 +61,5 @@ export default function Example() {
     </div>
   )
 }
+
 

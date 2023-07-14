@@ -12,6 +12,9 @@ import Promo from './components/Promo-Sections.js'
 import Category from './components/Category-Previews'
 import TrustedPartners from './components/Trusted-Partners.js'
 import BecomeAPartner from './components/Become-Partner-Application.js'
+import Menu from './components/Menu.js'
+import About from './components/About-Us.js'
+import SecondFeature from './components/Second-feaures-section.js'
 
 function App() {
   return (
@@ -20,15 +23,18 @@ function App() {
         <Routes>
           <Route path="/signin" element={<Signin />} />
           <Route path="/partnerApplicaction" element={<BecomeAPartner />} />
+          <Route path="/menu" element={<Menu />} />
           <Route path="/" element={
             <>
               <Header />
               <Category />
               <Promo />
               <Feature />
+              <SecondFeature />
               <Team />
               <Blog />
               <TrustedPartners />
+              <About />
               <Newsletter />
             </>
           }/>
