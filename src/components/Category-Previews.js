@@ -25,6 +25,30 @@ const restaurants = [
     href: '/restaurant3',
     deliveryFee: 'Free delivery',
   },
+    {
+    name: 'Subway',
+    description: 'Subway, eat fresh',
+    imageSrc: 'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U3Vid2F5JTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
+    imageAlt: 'Restaurant 1 image',
+    href: '/restaurant1',
+    deliveryFee: 'Free delivery',
+  },
+  {
+    name: 'China Town',
+    description: 'The best Chinese cuisine in town',
+    imageSrc: 'https://plus.unsplash.com/premium_photo-1669727914916-9d093297e1da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hpbmVzZSUyMGZyaWVkJTIwcmljZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
+    imageAlt: 'Restaurant 2 image',
+    href: '/restaurant2',
+    deliveryFee: 'Free delivery',
+  },
+  {
+    name: 'Steak House',
+    description: 'Take a bite of the best steak in town',
+    imageSrc: 'https://images.unsplash.com/photo-1588690793273-4d86028401f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFN0ZWFrfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60',
+    imageAlt: 'Restaurant 3 image',
+    href: '/restaurant3',
+    deliveryFee: 'Free delivery',
+  },
 ]
 
 export default function Example() {
@@ -39,9 +63,9 @@ export default function Example() {
               <span aria-hidden="true" className="ml-2">→</span>
             </Link>
           </div>
-          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
-            {restaurants.map((restaurant) => (
-              <div key={restaurant.name} className="group relative">
+          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:gap-x-6 lg:space-y-0">
+            {restaurants.map((restaurant, index) => (
+              <div key={restaurant.name} className={`group relative ${index < 3 ? 'mb-8' : ''}`}>
                 <div className="relative w-full aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-white group-hover:opacity-75">
                   <img
                     src={restaurant.imageSrc}

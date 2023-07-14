@@ -1,17 +1,4 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
+
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -19,123 +6,87 @@ import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@her
 const navigation = {
   categories: [
     {
-      id: 'women',
-      name: 'Women',
+      id: 'food_delivery',
+      name: 'Food Delivery',
       featured: [
         {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
-          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+          name: 'Pizza Night',
+          href: '/',
+          imageSrc: 'https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80',
+          imageAlt: 'Hot delicious pizza from our top pizza restaurants.',
         },
         {
-          name: 'Basic Tees',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
-          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+          name: 'Healthy Salads',
+          href: '/',
+          imageSrc: 'https://plus.unsplash.com/premium_photo-1664910904904-41d56d700e2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FsYWQlMjBlYXRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60',
+          imageAlt: 'Fresh salads from our partnered restaurants.',
         },
       ],
       sections: [
         {
-          id: 'clothing',
-          name: 'Clothing',
+          id: 'restaurants',
+          name: 'Top Restaurants',
           items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Dresses', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Denim', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: 'Pizza Man', href: '/' },
+            { name: 'KFC', href: '/' },
+            { name: 'Papaye', href: '/' },
           ],
         },
         {
-          id: 'accessories',
-          name: 'Accessories',
+          id: 'cuisines',
+          name: 'Popular Cuisines',
           items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
-          ],
-        },
-        {
-          id: 'brands',
-          name: 'Brands',
-          items: [
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Significant Other', href: '#' },
+            { name: 'Italian', href: '/' },
+            { name: 'Mexican', href: '/' },
+            { name: 'Chinese', href: '/' },
+            { name: 'Ghanaian', href: '/' },
           ],
         },
       ],
     },
     {
-      id: 'men',
-      name: 'Men',
+      id: 'grocery_delivery',
+      name: 'Grocery Delivery',
       featured: [
         {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-          imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
+          name: 'Fresh Fruits & Vegetables',
+          href: '/',
+          imageSrc: 'https://your-image-source.jpg',
+          imageAlt: 'Fresh produce from local stores.',
         },
         {
-          name: 'Artwork Tees',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
-          imageAlt:
-            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
+          name: 'Household Essentials',
+          href: '/',
+          imageSrc: 'https://your-image-source.jpg',
+          imageAlt: 'Everyday household essentials.',
         },
       ],
       sections: [
         {
-          id: 'clothing',
-          name: 'Clothing',
+          id: 'stores',
+          name: 'Top Stores',
           items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: 'Store 1', href: '/' },
+            { name: 'Store 2', href: '/' },
+            // ... list your top stores here
           ],
         },
         {
-          id: 'accessories',
-          name: 'Accessories',
+          id: 'categories',
+          name: 'Popular Categories',
           items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
-          ],
-        },
-        {
-          id: 'brands',
-          name: 'Brands',
-          items: [
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
+            { name: 'Fresh Produce', href: '/' },
+            { name: 'Dairy & Eggs', href: '/' },
+            // ... list popular grocery categories here
           ],
         },
       ],
     },
   ],
   pages: [
-    { name: 'Company', href: '#' },
-    { name: 'Stores', href: '#' },
+    { name: 'About Us', href: '/' },
+    { name: 'Contact Us', href: '/' },
+    { name: 'FAQs', href: '/' },
   ],
 }
 
@@ -260,19 +211,19 @@ export default function Example() {
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                    <a href="/" className="-m-2 block p-2 font-medium text-gray-900">
                       Sign in
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                    <a href="/" className="-m-2 block p-2 font-medium text-gray-900">
                       Create account
                     </a>
                   </div>
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
+                  <a href="/" className="-m-2 flex items-center p-2">
                     <img
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
@@ -290,7 +241,7 @@ export default function Example() {
 
       <header className="relative bg-white">
         <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
+          Get free delivery on orders over $10
         </p>
 
         <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -419,17 +370,17 @@ export default function Example() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  <a href="/" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Sign in
                   </a>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  <a href="/" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Create account
                   </a>
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
+                  <a href="/" className="flex items-center text-gray-700 hover:text-gray-800">
                     <img
                       src="https://tailwindui.com/img/flags/flag-canada.svg"
                       alt=""
@@ -442,7 +393,7 @@ export default function Example() {
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                  <a href="/" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
                   </a>
@@ -450,7 +401,7 @@ export default function Example() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                  <a href="/" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
