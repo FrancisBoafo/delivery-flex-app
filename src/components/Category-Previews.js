@@ -19,7 +19,7 @@ const restaurants = [
   },
   {
     name: 'Taco Place',
-    description: 'Live más',
+    description: 'Top quality tacos',
     imageSrc: 'https://plus.unsplash.com/premium_photo-1685316938388-c3dfe9a57ce1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGFjbyUyMGJlbGx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60',
     imageAlt: 'Restaurant 3 image',
     href: '/restaurant3',
@@ -88,7 +88,7 @@ export default function Example() {
                   </div>
                   <Link 
   to={restaurant.href} 
-  className="mt-4 inline-flex items-center px-3 py-2 text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+  className="mt-4 inline-flex items-center px-3 py-1 text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
 >
   Order Now → 
 </Link>
