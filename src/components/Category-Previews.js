@@ -27,7 +27,7 @@ const restaurants = [
   },
     {
     name: 'Subway',
-    description: 'Subway, eat fresh',
+    description: 'Subway, eat fresh and healthy',
     imageSrc: 'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U3Vid2F5JTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60',
     imageAlt: 'Restaurant 1 image',
     href: '/restaurant1',
@@ -81,7 +81,7 @@ export default function Example() {
                         {restaurant.name}
                       </a>
                     </h3>
-                    <p className=" sm:text-base text-sm sm:text-sm md:text-base font-semibold text-gray-900 text-left ">{restaurant.description}</p>
+                    <p className="  sm:text-sm md:text-base font-semibold text-gray-900 text-left ">{restaurant.description}</p>
 
 
                     <p className="text-base text-gray-500 text-left">{restaurant.deliveryFee}</p>
@@ -103,6 +103,12 @@ export default function Example() {
   )
 }
 
+
+
+  
+  
+  
+  
 
 
   
