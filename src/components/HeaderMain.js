@@ -46,11 +46,12 @@ export default function Example() {
 
     
     
-      <div className="relative z-60"> 
-        <Banner />
-      </div>
+<div className="relative z-60 hidden sm:block"> 
+  <Banner />
+</div>
+
       <div className="bg-white " >
-        <header className="absolute inset-x-0 top-2 z-50 pt-12">
+        <header className="absolute inset-x-0 sm:top-0 md:top-2 z-50 sm:pt-0 md:pt-10">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
               <a href="/" className="-m-1.5 p-1.5">
