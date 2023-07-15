@@ -63,7 +63,8 @@ export default function Example() {
               <span aria-hidden="true" className="ml-2">→</span>
             </Link>
           </div>
-          <div className="mt-9 space-y-0 grid grid-cols-3 gap-x-6 gap-y-12">
+          <div className="mt-9 space-y-0 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-12">
+
             {restaurants.map((restaurant, index) => (
               <div key={restaurant.name} className="group relative flex flex-col">
                 <div className="relative w-full h-auto overflow-hidden rounded-lg bg-white group-hover:opacity-75">
@@ -81,15 +82,15 @@ export default function Example() {
                         {restaurant.name}
                       </a>
                     </h3>
-                    <p className="hidden sm:block sm:text-base font-semibold text-gray-900 text-left">{restaurant.description}</p>
+                    <p className=" sm:text-base font-semibold text-gray-900 text-left">{restaurant.description}</p>
 
 
 
-                    <p className="base sm:text-sm text-base text-gray-500 text-left">{restaurant.deliveryFee}</p>
+                    <p className=" sm:text-sm text-base text-gray-500 text-left">{restaurant.deliveryFee}</p>
                   </div>
                   <Link 
   to={restaurant.href} 
-  className="mt-4 inline-flex items-center px-2 py-1 text-xs sm:px-3 sm:py-1 sm:text-sm md:px-3 md:py-2 md:text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+  className="mt-4 inline-flex items-center px-2 py-2 text-xs sm:px-3 sm:py-1 sm:text-sm md:px-3 md:py-2 md:text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
 >
   Order Now → 
 </Link>
