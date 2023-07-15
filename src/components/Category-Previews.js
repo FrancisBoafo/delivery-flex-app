@@ -81,17 +81,19 @@ export default function Example() {
                         {restaurant.name}
                       </a>
                     </h3>
-                    <p className=" sm:text-base text-sm sm:text-sm md:text-base font-semibold text-gray-900 text-left ">{restaurant.description}</p>
+                    <p className="hidden sm:block sm:text-base font-semibold text-gray-900 text-left">{restaurant.description}</p>
+
 
 
                     <p className="base sm:text-sm text-base text-gray-500 text-left">{restaurant.deliveryFee}</p>
                   </div>
                   <Link 
   to={restaurant.href} 
-  className="mt-4 inline-flex items-center px-3 py-1 text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+  className="mt-4 inline-flex items-center px-2 py-1 text-xs sm:px-3 sm:py-1 sm:text-sm md:px-3 md:py-2 md:text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
 >
   Order Now → 
 </Link>
+
 
 
               </div>
