@@ -15,7 +15,7 @@ export default function Example() {
                       <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                           Become Our Partner
                       </h1>
-                      <p className="mt-4 text-xl text-gray-500">
+                      <p className="mt-4 text-base text-xl text-gray-500">
                           Join us, and together we can deliver the best culinary experiences to our customers.
                       </p>
                       <a
