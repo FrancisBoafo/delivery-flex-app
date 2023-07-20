@@ -1,7 +1,7 @@
 
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon,BellIcon, MagnifyingGlassIcon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = {
   categories: [
@@ -247,12 +247,12 @@ export default function Example() {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
+              <div className="ml-4 flex lg:ml-0 ">
                 <a href="/">
                   <span className="sr-only">Your Company</span>
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    className="h-8 w-auto "
+                    src="https://fitness-tracker-client.vercel.app/static/media/LogoImage3.4524ce02a0f2a758b7a6.png" 
                     alt=""
                   />
                 </a>
@@ -358,48 +358,57 @@ export default function Example() {
                 </div>
               </Popover.Group>
 
-              <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="/signin" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Sign in
-                  </a>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a href="/signup" className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Sign up
-                  </a>
-                </div>
-              <div className="flex items-center lg:ml-6">
-              <label htmlFor="search" className="sr-only">Search</label>
-              <input
-                id="search"
-                type="search"
-                className="w-full text-sm  p-2 text-black bg-white rounded-md pl-10"
-                placeholder="Search Menu..."
-              />
-              <MagnifyingGlassIcon 
-                className="absolute text-gray-400 hover:text-gray-500 h-6 w-6 ml-2" 
-                aria-hidden="true" 
-              />
+ <div className="ml-auto flex items-center">
+              <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <a href="/signin" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  Sign in
+                </a>
+                <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                <a href="/signup" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  Sign up
+                </a>
+              </div>
             </div>
-                {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6">
+            <div className="ml-4 flex items-center">
+                <BellIcon className="h-6 w-6 text-gray-400 hover:text-gray-500" aria-hidden="true" />
+                <div className="ml-4 flow-root">
                   <a href="/" className="group -m-2 flex items-center p-2">
-                  <div className="p-2 bg-black rounded">
-  <ShoppingCartIcon
-    className="h-6 w-6 flex-shrink-0 text-white group-hover:text-gray-500"
-    aria-hidden="true"
-  />
-</div>
+                    <div className="p-2 bg-white rounded">
+                      <ShoppingCartIcon
+                        className="h-6 w-6 flex-shrink-0 text-black group-hover:text-gray-500"
+                        aria-hidden="true"
+                      />
+                    </div>
 
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                     <span className="sr-only">items in cart, view bag</span>
                   </a>
                 </div>
               </div>
+          </div>
+          <div className="border-t border-gray-200 py-3">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6  lg:px-8 flex items-center">
+              <div className="flex-grow">
+                <label htmlFor="search" className="sr-only">Search</label>
+                <div className="relative">
+                  <input
+                    id="search"
+                    type="search"
+                    className="w-full text-sm p-2  text-gray-800 bg-gray-100 rounded-md pl-10"
+                    placeholder="Search Menu..."
+                  />
+                  <MagnifyingGlassIcon 
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-800 hover:text-gray-500 h-6 w-6" 
+                    aria-hidden="true" 
+                  />
+                </div>
+              </div>
+           
             </div>
+          </div>
           </div>
         </nav>
       </header>
     </div>
   )
-}
+  }
