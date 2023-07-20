@@ -14,6 +14,7 @@ import BecomeAPartner from './components/Become-Partner-Application.js'
 import Menu from './components/Menu.js'
 import About from './components/About-Us.js'
 import SecondFeature from './components/Second-feaures-section.js'
+import Footer from './components/Footer.js'
 import { 
   ClerkProvider, 
   SignedIn, 
@@ -57,7 +58,9 @@ function App() {
                 <Blog />
                 <TrustedPartners />
                 <About />
+                <Footer />
                 <Newsletter />
+                
               </>
             }/>
             <Route path="/partnerApplicaction" element={
