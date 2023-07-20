@@ -84,13 +84,15 @@ export default function RestaurantPage() {
   }
 
   return (
-    <div className="bg-white">
-      <MenuNav />
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <Restaurant restaurant={restaurant} handleAddToCart={handleAddToCart} />
-      </div>
-      <FAQ />
-      <MenuFooter />
-    </div>
+
+        <div className="bg-white">
+          <MenuNav />
+          <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            <Restaurant restaurant={restaurant} handleAddToCart={handleAddToCart} />
+          </div>
+          <FAQ restaurant={restaurant} />  {/* Pass the restaurant data as a prop */}
+          <MenuFooter />
+        </div>
+    
   );
 }

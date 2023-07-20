@@ -15,6 +15,8 @@ import Menu from './components/Menu.js'
 import About from './components/About-Us.js'
 import SecondFeature from './components/Second-feaures-section.js'
 import Footer from './components/Footer.js'
+import TeamStory from './components/Our-Team'
+import Cookie from './components/Cookie.js'
 import { 
   ClerkProvider, 
   SignedIn, 
@@ -52,14 +54,14 @@ function App() {
                 <Header />
                 <Category />
                 <Promo />
-                <Feature />
                 <SecondFeature />
                 <Team />
+                <TeamStory />
                 <Blog />
-                <TrustedPartners />
                 <About />
                 <Footer />
                 <Newsletter />
+                <Cookie />
                 
               </>
             }/>
