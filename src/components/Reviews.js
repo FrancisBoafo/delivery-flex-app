@@ -11,7 +11,7 @@ export default function Reviews({reviews}) {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-x-8 lg:px-8 lg:py-32">
         <div className="lg:col-span-4">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customer Reviews</h2>
+          <h2 className="text-2xl font-bold text-left tracking-tight text-gray-900">Rating & Reviews</h2>
 
           <div className="mt-3 flex items-center">
             <div>
@@ -77,7 +77,7 @@ export default function Reviews({reviews}) {
               If you’ve used this product, share your thoughts with other customers
             </p>
 
-            <a
+            <a 
               href="#"
               className="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full"
             >

@@ -1,25 +1,20 @@
 import { useState } from 'react';
 import MenuNav from './Menu-Navigation';
 import Reviews from './Reviews';
-import { StarIcon } from '@heroicons/react/20/solid'
 import FAQ from './FAQ';
 import MenuFooter from './Menu-Footer';
 
-const MenuItem = ({ item, handleAddToCart }) => (
-  <div className="flex justify-between my-4">
-    <div>
-      <p className="text-lg">{item.name}</p>
-      <p className="text-sm text-gray-600">{item.description}</p>
-    </div>
-    <div>
-      <p className="text-lg">${item.price.toFixed(2)}</p>
-      <button onClick={() => handleAddToCart(item)} className="text-xs px-2 py-1 rounded bg-green-500 text-white hover:bg-green-600">Add to Cart</button>
-    </div>
-  </div>
-);
+// Import Clerk and Star Rating component
+import { useUser } from "@clerk/clerk-react";
+import StarRatingComponent from './Rating-Star';
 
 const Restaurant = ({ restaurant, handleAddToCart }) => {
   const averageRating = restaurant.reviews.average;
+  // Add a state for star rating
+  const [rating, setRating] = useState(averageRating);
+
+  // Use Clerk's useUser hook to get current user
+  const { user } = useUser();
 
   return (
     <div className="mb-4">
@@ -27,7 +22,7 @@ const Restaurant = ({ restaurant, handleAddToCart }) => {
         <img
           src={restaurant.imageSrc}
           alt={restaurant.imageAlt}
-          className="w-full h-full object-cover"
+          className="lg:w-full lg:h-full object-cover"
         />
         <img
           src={restaurant.logo}
@@ -40,8 +35,15 @@ const Restaurant = ({ restaurant, handleAddToCart }) => {
       <p className='text-left text-sm text-gray-600'>{restaurant.description}</p>
       <p className='text-left text-sm text-gray-600'>{`Average Rating: ${averageRating.toFixed(1)} / 5`}</p>
 
-
-    
+      {/* Show star rating component only if user is logged in */}
+      {user && (
+        <StarRatingComponent 
+          name="rate1" 
+          starCount={5}
+          value={rating}
+          onStarClick={(nextValue, prevValue, name) => setRating(nextValue)}
+        />
+      )}
 
       <Reviews reviews={restaurant.reviews} />
     </div>
@@ -75,6 +77,7 @@ export default function RestaurantPage() {
         { id: 'r1', author: 'JohnDoe', content: 'Amazing food! Loved the pizza.', rating: 4, avatarSrc: 'https://randomuser.me/api/portraits/men/1.jpg' },
         { id: 'r2', author: 'JaneDoe', content: 'Spaghetti was delicious!', rating: 5, avatarSrc: 'https://randomuser.me/api/portraits/men/1.jpg' },
         { id: 'r3', author: 'JimDoe', content: 'Great atmosphere and good service', rating: 4, avatarSrc: 'https://randomuser.me/api/portraits/men/1.jpg' },
+        
       ],
     },
   };
@@ -83,16 +86,14 @@ export default function RestaurantPage() {
     setCart(oldCart => [...oldCart, item]);
   }
 
-  return (
-
-        <div className="bg-white">
-          <MenuNav />
-          <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <Restaurant restaurant={restaurant} handleAddToCart={handleAddToCart} />
-          </div>
-          <FAQ restaurant={restaurant} />  {/* Pass the restaurant data as a prop */}
-          <MenuFooter />
-        </div>
-    
+ return (
+    <div className="bg-white">
+      <MenuNav />
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <Restaurant restaurant={restaurant} handleAddToCart={handleAddToCart} />
+      </div>
+      <FAQ restaurant={restaurant} />  {/* Pass the restaurant data as a prop */}
+      <MenuFooter />
+    </div>
   );
 }
