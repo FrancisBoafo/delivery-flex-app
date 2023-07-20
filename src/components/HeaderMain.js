@@ -3,6 +3,7 @@ import { Dialog} from '@headlessui/react'
 import { Bars3Icon, XMarkIcon,ArrowRightIcon,MapPinIcon,ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 import Banner from './Banners'
 import Services from './Services-flyout'
+import { UserButton, useUser } from "@clerk/clerk-react";
 
 
 
@@ -40,18 +41,16 @@ const navigation = [
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
+  const { user } = useUser();
 
   return (
     <>
+    <div className="relative z-60 hidden sm:block"> 
+        <Banner />
+    </div>
 
-    
-    
-<div className="relative z-60 hidden sm:block"> 
-  <Banner />
-</div>
-
-      <div className="bg-white " >
-        <header className="absolute inset-x-0 sm:top-0 md:top-2 z-50 sm:pt-0 md:pt-10">
+    <div className="bg-white" >
+        <header className="absolute inset-x-0 sm:top-0 md:top-2 z-50 sm:pt-7 md:pt-10">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
               <a href="/" className="-m-1.5 p-1.5">
@@ -74,23 +73,21 @@ export default function Example() {
               </button>
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
-  {navigation.map((item) => (
-    item.component ? (
-      <div key={item.name}>
-        {item.component}
-      </div>
-    ) : (
-      <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
-        {item.name}
-      </a>
-    )
-  ))}
-</div>
+              {navigation.map((item) => (
+                item.component ? (
+                  <div key={item.name}>
+                    {item.component}
+                  </div>
+                ) : (
+                  <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                    {item.name}
+                  </a>
+                )
+              ))}
+            </div>
 
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="/signin" className="text-sm font-semibold leading-6 text-gray-900">
-                Log in <span aria-hidden="true">&rarr;</span>
-              </a>
+              {user ? <UserButton /> : <a href="/signin" className="text-sm font-semibold leading-6 text-gray-100">Log in <span aria-hidden="true">&rarr;</span></a>}
             </div>
           </nav>
           <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -155,12 +152,7 @@ export default function Example() {
                       ))}
                   </div>
                   <div className="py-6">
-                    <a
-                      href="/signin"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Log in
-                    </a>
+                    {user ? <UserButton /> : <a href="/signin" className="text-base font-semibold leading-7 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>}
                   </div>
                 </div>
               </div>
@@ -188,10 +180,10 @@ export default function Example() {
             </div>
           </div>
           <div className="text-center">
-  <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-4xl" style={{ fontFamily: "'Roboto', sans-serif" }}>
-    DISCOVER DELICIOUSNESS
-  </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 mx-auto max-w-prose">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-4xl" style={{ fontFamily: "'Roboto', sans-serif" }}>
+          DISCOVER DELICIOUSNESS
+        </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600 mx-auto max-w-prose">
               Craving something delicious? Explore new and exciting dishes with Delivery Flex. 
             </p>
             <div className="mt-6 mx-auto max-w-prose">
@@ -214,7 +206,7 @@ export default function Example() {
                 href="/menu"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
               >
-                Order now
+                Order now 
               </a>
               <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
                 Explore Menu <span aria-hidden="true">→</span>
