@@ -86,9 +86,9 @@ export default function RestaurantPage() {
     logo: 'https://img.cdn4dd.com/p/fit=contain,width=200,height=200,format=auto,quality=95/media/restaurant/cover_square/efe58558-a9dc-466d-922b-ecce4b3213b1.png',
     coordinates: [51.505, -0.09],
     menu: [
-      { id: 'm1', name: 'Spaghetti Bolognese', description: 'Classic Italian pasta', price: 12.99 },
-      { id: 'm2', name: 'Margherita Pizza', description: 'Cheese and tomato pizza', price: 9.99 },
-      { id: 'm3', name: 'Tiramisu', description: 'Italian coffee-flavoured dessert', price: 6.99 },
+      { id: 'm1', name: 'Spaghetti Bolognese', description: 'Classic Italian pasta', price: 12.99,imageSrc: 'https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60' },
+      { id: 'm2', name: 'Margherita Pizza', description: 'Cheese and tomato pizza', price: 9.99,imageSrc: 'https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60' },
+      { id: 'm3', name: 'Tiramisu', description: 'Italian coffee-flavoured dessert', price: 6.99,imageSrc: 'https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60' },
     ],
     reviews: {
       average: 4.5,
