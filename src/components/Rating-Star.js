@@ -23,15 +23,18 @@ function getLabelText(value) {
 export default function HoverRating() {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
+  const [isHovering, setIsHovering] = React.useState(false);  
 
   return (
     <Box
       sx={{
-        width: 200,
         display: 'flex',
         alignItems: 'center',
       }}
+      onMouseEnter={() => setIsHovering(true)} 
+      onMouseLeave={() => setIsHovering(false)} 
     >
+      <p className='text-sm text-gray-600'>{`Rate Restaurant: `}</p>
       <Rating
         name="hover-feedback"
         value={value}
@@ -45,9 +48,11 @@ export default function HoverRating() {
         }}
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
       />
-      {value !== null && (
+      {isHovering && value !== null && (
         <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
       )}
     </Box>
   );
 }
+
+

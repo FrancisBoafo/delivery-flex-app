@@ -17,22 +17,45 @@ const Restaurant = ({ restaurant, handleAddToCart }) => {
   const { user } = useUser();
 
   return (
-    <div className="mb-4">
-      <div className="relative h-80 w-full overflow-hidden rounded-lg">
-        <img
-          src={restaurant.imageSrc}
-          alt={restaurant.imageAlt}
-          className="lg:w-full lg:h-full object-cover"
-        />
-        <img
-          src={restaurant.logo}
-          alt={`${restaurant.name} logo`}
-          className="h-20 w-20 object-cover rounded-full border-4 border-white absolute bottom-0 transform -translate-y-1/4 translate-x-2"
-        />
-      </div>
+<div className="mb-4">
+  <div className="relative h-56 sm:h-80 w-full overflow-hidden rounded-lg">
+    <img
+      src={restaurant.imageSrc}
+      alt={restaurant.imageAlt}
+      className="w-full h-full object-cover"
+    />
+    <img
+      src={restaurant.logo}
+      alt={`${restaurant.name} logo`}
+      className="h-16 sm:h-20 w-16 sm:w-20 object-cover rounded-full border-4 border-white absolute bottom-0 left-2"
+    />
+  </div>
+  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6 mb-2">
+    <div className="flex items-center">
+      <h1 className="text-xl sm:text-2xl font-bold mr-2">{restaurant.name}</h1>
+      <span className="text-sm sm:text-base text-gray-600">{`(${restaurant.reviews.totalCount}+rating)`}</span>
+      <svg
 
-      <h2 className="mt-2 text-s text-left font-bold">{restaurant.name}</h2>
-      <p className='text-left text-sm text-gray-600'>{restaurant.description}</p>
+className="w-4 h-4 fill-current text-yellow-500 mr-2"
+viewBox="0 0 24 24"
+>
+<path
+  d="M12.001 2.5l3.09 6.272 6.91.999-5 4.864 1.182 6.901L12 17.713l-6.091 3.823 1.182-6.901-5-4.864 6.91-.999L12.001 2.5z"
+/>
+</svg>
+      <span className="text-sm sm:text-base text-gray-600">{restaurant.location}</span>
+    </div>
+    <div className="flex items-center mt-2 sm:mt-0">
+      <span className="text-sm sm:text-base text-gray-600 mr-2">{`$${restaurant.deliveryFee} delivery`}</span>
+      <span className="text-sm sm:text-base text-gray-600">{`${restaurant.waitTime} min`}</span>
+    </div>
+  </div>
+
+
+
+
+
+     
       <p className='text-left text-sm text-gray-600'>{`Average Rating: ${averageRating.toFixed(1)} / 5`}</p>
 
       {/* Show star rating component only if user is logged in */}
@@ -89,9 +112,9 @@ export default function RestaurantPage() {
  return (
     <div className="bg-white">
       <MenuNav />
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <Restaurant restaurant={restaurant} handleAddToCart={handleAddToCart} />
-      </div>
+      <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
+    <Restaurant restaurant={restaurant} handleAddToCart={handleAddToCart} />
+</div>
       <FAQ restaurant={restaurant} />  {/* Pass the restaurant data as a prop */}
       <MenuFooter />
     </div>
