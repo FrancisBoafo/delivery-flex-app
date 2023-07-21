@@ -251,8 +251,8 @@ export default function Example() {
                 <a href="/">
                   <span className="sr-only">Your Company</span>
                   <img
-                    className="h-8 w-auto "
-                    src="https://fitness-tracker-client.vercel.app/static/media/LogoImage3.4524ce02a0f2a758b7a6.png" 
+                    className=" flex h-8 w-auto sm:hidden "
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt=""
                   />
                 </a>
