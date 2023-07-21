@@ -71,3 +71,13 @@
 .animate-logo {
   animation: logo 2s ease-in-out infinite;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
