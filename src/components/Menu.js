@@ -3,6 +3,7 @@ import MenuNav from './Menu-Navigation';
 import Reviews from './Reviews';
 import FAQ from './FAQ';
 import MenuFooter from './Menu-Footer';
+import MostLikedItems from './Most-Liked-category';
 
 // Import Clerk and Star Rating component
 import { useUser } from "@clerk/clerk-react";
@@ -114,7 +115,8 @@ export default function RestaurantPage() {
       <MenuNav />
       <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
     <Restaurant restaurant={restaurant} handleAddToCart={handleAddToCart} />
-</div>
+    </div>
+      <MostLikedItems items={restaurant.menu} />
       <FAQ restaurant={restaurant} />  {/* Pass the restaurant data as a prop */}
       <MenuFooter />
     </div>
