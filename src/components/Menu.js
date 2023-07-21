@@ -32,7 +32,7 @@ const Restaurant = ({ restaurant, handleAddToCart }) => {
   </div>
   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6 mb-2">
     <div className="flex items-center">
-      <h1 className="text-xl sm:text-2xl font-bold mr-2">{restaurant.name}</h1>
+      <h1 className="text-xl sm:text-base text-left font-bold mr-2">{restaurant.name}</h1>
       <span className="text-sm sm:text-base text-gray-600">{`(${restaurant.reviews.totalCount}+rating)`}</span>
       <svg
 
