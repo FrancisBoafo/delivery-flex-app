@@ -21,7 +21,7 @@ export default function MostLikedItems({items}) {
       <div className="py-19 sm:py-35 lg:mx-auto lg:max-w-7xl lg:px-8">
         <div className="flex items-center justify-between px-4 sm:px-6 lg:px-0 mb-4">
           <h2 className="text-xl font-bold text-base tracking-tight text-gray-900">Popular Dishes</h2>
-          <div className="flex space-x-2 bg-gray-200 p-2 rounded-full">
+          <div className="flex space-x-4 bg-gray-200 p-1 rounded-full">
             <ArrowLeftIcon className="h-6 w-6 text-gray-500 cursor-pointer" onClick={scrollLeft} />
             <ArrowRightIcon className="h-6 w-6 text-gray-500 cursor-pointer" onClick={scrollRight} />
           </div>

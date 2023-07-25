@@ -25,11 +25,18 @@ const Restaurant = ({ restaurant, handleAddToCart }) => {
       alt={restaurant.imageAlt}
       className="w-full h-full object-cover"
     />
-    <img
-      src={restaurant.logo}
-      alt={`${restaurant.name} logo`}
-      className="h-16 sm:h-20 w-16 sm:w-20 object-cover rounded-full border-4 border-white absolute bottom-0 left-2"
-    />
+    <div className="absolute text-base text-left text-white bottom-0 p-4">
+      <h1 className="sm:text-3xl text-xl font-semibold">{restaurant.name}</h1>
+      <p className="sm:text-xl text-lg">{restaurant.description}</p>
+    </div>
+    <div className="absolute top-0 right-0 p-4">
+      <img
+        src={restaurant.logo}
+        alt={restaurant.name}
+        className="w-16 h-16 object-cover rounded-full"
+      />
+    </div>
+
   </div>
   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6 mb-2">
     <div className="flex items-center">
