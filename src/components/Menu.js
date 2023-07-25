@@ -82,13 +82,13 @@ export default function RestaurantPage() {
     name: 'Mario\'s Italian Kitchen',
     description: 'The best Italian food in Springfield!',
     location: '123 Fake St, Springfield',
-    imageSrc: 'https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60',
+    imageSrc: 'https://images.unsplash.com/photo-1605311525808-ea0daef137b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2214&q=80',
     logo: 'https://img.cdn4dd.com/p/fit=contain,width=200,height=200,format=auto,quality=95/media/restaurant/cover_square/efe58558-a9dc-466d-922b-ecce4b3213b1.png',
     coordinates: [51.505, -0.09],
     menu: [
-      { id: 'm1', name: 'Spaghetti Bolognese', description: 'Classic Italian pasta', price: 12.99,imageSrc: 'https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60' },
-      { id: 'm2', name: 'Margherita Pizza', description: 'Cheese and tomato pizza', price: 9.99,imageSrc: 'https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60' },
-      { id: 'm3', name: 'Tiramisu', description: 'Italian coffee-flavoured dessert', price: 6.99,imageSrc: 'https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWNkb25hbGRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=1400&q=60' },
+      { id: 'm1', name: 'Spaghetti Bolognese', description: 'Classic Italian pasta', price: 12.99,imageSrc: 'https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=13KEeHdgBUezcK5Jha7P_izbh9xZURQN4qQnhjYey-o=' },
+      { id: 'm2', name: 'Margherita Pizza', description: 'Cheese and tomato pizza', price: 9.99,imageSrc: 'https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=13KEeHdgBUezcK5Jha7P_izbh9xZURQN4qQnhjYey-o=' },
+      { id: 'm3', name: 'Tiramisu', description: 'Italian coffee-flavoured dessert', price: 6.99,imageSrc: 'https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=13KEeHdgBUezcK5Jha7P_izbh9xZURQN4qQnhjYey-o=' },
     ],
     reviews: {
       average: 4.5,

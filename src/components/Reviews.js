@@ -13,7 +13,7 @@ export default function Reviews({reviews}) {
     const [isOpen, setIsOpen] = useState(false);
     const [isReviewBoxOpen, setIsReviewBoxOpen] = useState(false);
     return (
-      <div className="bg-white border border-gray-200 rounded-lg rounded-sm  max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+      <div className="bg-white border border-gray-200 rounded-xl max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
         <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 items-start">
           <div className="border-r border-gray-200 pr-8">
             <h2 className="text-2xl font-bold text-left tracking-tight text-base text-gray-900">Rating & Reviews</h2>

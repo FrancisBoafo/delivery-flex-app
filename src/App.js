@@ -55,12 +55,11 @@ function App() {
                 <Category />
                 <Promo />
                 <SecondFeature />
-                <Team />
-                <TeamStory />
+             
                 <Blog />
+                <TeamStory />
                 <About />
                 <Footer />
-                <Newsletter />
                 <Cookie />
                 
               </>
