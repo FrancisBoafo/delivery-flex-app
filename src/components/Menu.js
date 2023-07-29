@@ -96,6 +96,7 @@ export default function RestaurantPage() {
       { id: 'm1', name: 'Spaghetti Bolognese', description: 'Classic Italian pasta', price: 12.99,imageSrc: 'https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=13KEeHdgBUezcK5Jha7P_izbh9xZURQN4qQnhjYey-o=' },
       { id: 'm2', name: 'Margherita Pizza', description: 'Cheese and tomato pizza', price: 9.99,imageSrc: 'https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=13KEeHdgBUezcK5Jha7P_izbh9xZURQN4qQnhjYey-o=' },
       { id: 'm3', name: 'Tiramisu', description: 'Italian coffee-flavoured dessert', price: 6.99,imageSrc: 'https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=13KEeHdgBUezcK5Jha7P_izbh9xZURQN4qQnhjYey-o=' },
+      { id: 'm4', name: 'Bruschetta', description: 'Grilled bread garlic', price: 4.99,imageSrc: 'https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=13KEeHdgBUezcK5Jha7P_izbh9xZURQN4qQnhjYey-o=' },
     ],
     reviews: {
       average: 4.5,
